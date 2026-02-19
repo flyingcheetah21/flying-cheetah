@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sylva Systems</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 * {
     margin: 0;
@@ -14,60 +15,94 @@
 }
 
 body {
-    background: #f7f9f8;
+    background: #f4f7f6;
     color: #1a1a1a;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* NAV */
+.navbar {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    z-index: 10;
+}
+
+.navbar img {
+    height: 65px;
+}
+
+/* HERO */
 header {
-    background: linear-gradient(135deg, #1F3D2B, #2f5f45);
+    position: relative;
+    background: linear-gradient(rgba(20,45,35,0.85), rgba(20,45,35,0.85)),
+                url('AerialDrone.png');
+    background-size: cover;
+    background-position: center;
     color: white;
-    padding: 120px 20px;
+    padding: 190px 20px 160px 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 3.2rem;
+    font-weight: 800;
     margin-bottom: 25px;
+    letter-spacing: -1px;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     max-width: 750px;
-    margin: 0 auto 35px auto;
+    margin: 0 auto 40px auto;
+    opacity: 0.95;
 }
 
 .btn {
     display: inline-block;
-    padding: 14px 32px;
+    padding: 15px 36px;
     background: white;
     color: #1F3D2B;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     transition: 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
-    background: #e6e6e6;
+    transform: translateY(-2px);
 }
 
+/* SECTIONS */
 section {
-    padding: 90px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 110px 0;
 }
 
 section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 25px;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
     color: #1F3D2B;
+    font-weight: 700;
+}
+
+.section-light {
+    background: white;
+}
+
+.section-muted {
+    background: #eef3f1;
 }
 
 .columns {
     display: flex;
-    gap: 30px;
+    gap: 35px;
     flex-wrap: wrap;
 }
 
@@ -75,53 +110,73 @@ section h2 {
     flex: 1;
     min-width: 280px;
     background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
 }
 
-.card h3 {
-    margin-bottom: 10px;
-    color: #1F3D2B;
-}
-
-.card p {
-    margin-top: 10px;
-}
-
-ul {
-    margin-top: 15px;
-    padding-left: 20px;
+.card:hover {
+    transform: translateY(-4px);
 }
 
 .founder-card {
     background: white;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     margin-bottom: 40px;
 }
 
+.founder-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+}
+
+.founder-card p {
+    margin-top: 12px;
+}
+
+ul {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
 footer {
-    background: #1F3D2B;
+    background: #142d23;
     color: white;
     text-align: center;
-    padding: 50px 20px;
-    margin-top: 80px;
+    padding: 70px 20px;
 }
 
 footer p {
     margin-bottom: 8px;
+    opacity: 0.9;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
+
     header h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
     }
+
+    .navbar {
+        left: 20px;
+    }
+
+    .navbar img {
+        height: 50px;
+    }
+
 }
 </style>
 </head>
 <body>
+
+<div class="navbar">
+    <img src="SylvaSystemsNewLogo.png" alt="Sylva Systems Logo">
+</div>
 
 <header>
     <h1>Protecting Forests and Farms Through Intelligent Aerial Insight</h1>
@@ -129,23 +184,28 @@ footer p {
     <a href="#contact" class="btn">Request a Pilot Program</a>
 </header>
 
-<section>
+<section class="section-light">
+<div class="container">
     <h2>Monitoring Land at Scale Is Increasingly Difficult</h2>
     <p>Large agricultural operations and conservation areas face a growing challenge: identifying plant stress, disease, and environmental disruption early enough to act.</p>
     <br>
     <p>Traditional inspections are labor-intensive, reactive, and often too late to prevent meaningful loss. By the time symptoms are visible from the ground, impact has already occurred.</p>
+</div>
 </section>
 
-<section>
+<section class="section-muted">
+<div class="container">
     <h2>Early Detection. Actionable Intelligence.</h2>
     <p>Sylva Systems deploys unmanned aerial systems equipped with high-resolution imaging to monitor vegetation health across large areas efficiently.</p>
     <br>
     <p>Through systematic analysis of aerial data, we identify subtle patterns of stress and irregular growth before they become visible to the naked eye.</p>
     <br>
     <p>Our mission is to provide land managers with clear, data-driven insight that protects yield, biodiversity, and long-term ecosystem stability.</p>
+</div>
 </section>
 
-<section>
+<section class="section-light">
+<div class="container">
     <h2>How It Works</h2>
     <div class="columns">
         <div class="card">
@@ -161,9 +221,11 @@ footer p {
             <p>Clients receive visual reports highlighting priority zones for proactive intervention.</p>
         </div>
     </div>
+</div>
 </section>
 
-<section>
+<section class="section-muted">
+<div class="container">
     <h2>Designed for Land Stewards</h2>
     <ul>
         <li>Commercial Farms</li>
@@ -171,9 +233,11 @@ footer p {
         <li>Nature Reserves</li>
         <li>Environmental Research Groups</li>
     </ul>
+</div>
 </section>
 
-<section>
+<section class="section-light">
+<div class="container">
     <h2>The Founders</h2>
 
     <div class="founder-card">
@@ -200,13 +264,16 @@ footer p {
         <p>At Sylva Systems, Cole oversees drone architecture and deployment systems, ensuring aerial platforms are optimized for durability, efficiency, and high-resolution environmental data capture.</p>
     </div>
 
+</div>
 </section>
 
-<section id="contact">
+<section id="contact" class="section-muted">
+<div class="container">
     <h2>Let’s Build a Smarter Monitoring Future</h2>
     <p>We are currently partnering with early collaborators to pilot and refine our monitoring systems.</p>
     <br>
     <p>Email us at <strong>hello@ssdrones.com</strong></p>
+</div>
 </section>
 
 <footer>
